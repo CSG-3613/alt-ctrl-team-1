@@ -2,44 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class AirplaneController : MonoBehaviour
 {
-    public float thrustAmount = 100f;
-    public float turnSpeed = 50f;
-    public float liftAmount = 50f;
-    private Rigidbody rb;
+
+    public float speed = 25.0f;
+    public float turnSpeed = 1f;
+    public float horizontalInput;
+    public float verticalInput;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        ApplyThrust(vertical);
-        Turn(horizontal);
-        ApplyLift();
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        bank();
     }
 
-    void ApplyThrust(float amount)
-    {
-        rb.AddForce(transform.forward * thrustAmount * amount);
-    }
+    void bank () {
+        horizontalInput = Input.GetAxis("Horizontal");
 
-    void Turn(float direction)
-    {
-        rb.AddTorque(Vector3.up * direction * turnSpeed);
-    }
-
-    void ApplyLift()
-    {
-        if (rb.velocity.magnitude > 10)
-        {
-            rb.AddForce(Vector3.up * liftAmount * rb.velocity.magnitude);
+        if (transform.rotation.z > -45 || transform.rotation.z < 45) {
+            transform.Rotate(0, 0, -turnSpeed * horizontalInput * Time.deltaTime);
+            transform.Rotate(0, turnSpeed * horizontalInput * Time.deltaTime, 0);
         }
+    }
+
+    void zero() { 
+        
     }
 }
