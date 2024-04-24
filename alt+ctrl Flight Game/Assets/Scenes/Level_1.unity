@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 72126371}
   m_Layer: 0
   m_Name: Wings
-  m_TagString: Plane
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ Transform:
   m_GameObject: {fileID: 526131200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.091}
+  m_LocalPosition: {x: 0, y: 0, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 3.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -375,7 +375,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
@@ -516,8 +516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562386165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11462257, y: -0, z: -0, w: 0.9934091}
-  m_LocalPosition: {x: 0, y: 4, z: -7.5}
+  m_LocalRotation: {x: 0.07443188, y: -0, z: -0, w: 0.9972261}
+  m_LocalPosition: {x: 0, y: 4, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -532,14 +532,14 @@ AimConstraint:
   m_GameObject: {fileID: 562386165}
   m_Enabled: 1
   serializedVersion: 2
-  m_Weight: 1
-  m_RotationAtRest: {x: 13.163693, y: -0, z: -0}
-  m_RotationOffset: {x: 14.931522, y: 0, z: 0}
+  m_Weight: 0.5
+  m_RotationAtRest: {x: 8.537133, y: -0, z: -0}
+  m_RotationOffset: {x: 14.93154, y: 0, z: 0}
   m_AimVector: {x: 0, y: -0.3, z: 1}
   m_UpVector: {x: 0, y: 1, z: 0}
   m_WorldUpVector: {x: 0, y: 1, z: 0}
   m_WorldUpObject: {fileID: 0}
-  m_UpType: 2
+  m_UpType: 4
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
@@ -558,12 +558,12 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 3, z: -7.5}
-  m_RotationAtRest: {x: 13.163725, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0, y: 4, z: -11}
+  m_RotationAtRest: {x: 8.537145, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 2, z: -7.5}
+  - {x: 0, y: 2, z: -11}
   m_RotationOffsets:
-  - {x: 13.163728, y: 0, z: 0}
+  - {x: 8.537146, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 1612186848}
   m_Layer: 0
   m_Name: Tail Wing
-  m_TagString: Plane
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 1751742940}
   m_Layer: 0
   m_Name: Airplane
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -832,7 +832,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 25
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0.333}
   m_InertiaTensor: {x: 0, y: 0, z: 0}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
