@@ -516,13 +516,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562386165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07443188, y: -0, z: -0, w: 0.9972261}
-  m_LocalPosition: {x: 0, y: 4, z: -11}
+  m_LocalRotation: {x: 0.08715652, y: -0, z: -0, w: 0.99619466}
+  m_LocalPosition: {x: 0, y: 4, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.000054, y: 0, z: 0}
 --- !u!895512359 &562386173
 AimConstraint:
   m_ObjectHideFlags: 0
@@ -533,8 +533,8 @@ AimConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 0.5
-  m_RotationAtRest: {x: 8.537133, y: -0, z: -0}
-  m_RotationOffset: {x: 14.93154, y: 0, z: 0}
+  m_RotationAtRest: {x: 10.000066, y: 0, z: 0}
+  m_RotationOffset: {x: 10.753918, y: 0, z: 0}
   m_AimVector: {x: 0, y: -0.3, z: 1}
   m_UpVector: {x: 0, y: 1, z: 0}
   m_WorldUpVector: {x: 0, y: 1, z: 0}
@@ -558,12 +558,12 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 4, z: -11}
-  m_RotationAtRest: {x: 8.537145, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0, y: 4, z: -7}
+  m_RotationAtRest: {x: 10.000087, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 2, z: -11}
+  - {x: 0, y: 2, z: -7}
   m_RotationOffsets:
-  - {x: 8.537146, y: 0, z: 0}
+  - {x: 10.000091, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -709,7 +709,7 @@ Transform:
   m_GameObject: {fileID: 1612186846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.35, z: -1.25}
+  m_LocalPosition: {x: 0, y: 0.35, z: -1}
   m_LocalScale: {x: 0.75, y: 1, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []

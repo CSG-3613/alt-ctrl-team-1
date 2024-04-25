@@ -24,31 +24,38 @@ public class AirplaneController : MonoBehaviour
 	void Update()
 	{
 		horizontalInput = Input.GetAxis("Horizontal");
+		verticalInput = Input.GetAxis("Vertical");
 
 		rb.velocity = transform.forward * speed;
 
 		if (horizontalInput != 0){
 			bank();
 		}
-
-		altitude();
-		roll();
+		if (verticalInput != 0){
+			pitch();
+		}
+		if (rollInput != 0){
+			roll();	
+		}
 	}
 
 	void bank () {		
-		transform.Rotate(new Vector3(0,0,1) * horizontalInput * Time.deltaTime * turnSpeed);
+		transform.Rotate(Vector3.back * horizontalInput * Time.deltaTime * turnSpeed);
 
-		//if (horizontalInput > 0) {
-		//	rb.velocity += Vector3.right * turnSpeed;
-		//} else {
-		//	rb.velocity -= Vector3.right * turnSpeed;
-		//}
+		if (horizontalInput > 0)
+		{
+			rb.velocity += Vector3.right * turnSpeed;
+		}
+		else
+		{
+			rb.velocity -= Vector3.right * turnSpeed;
+		}
 	}
 
-	void altitude() {
-		verticalInput = Input.GetAxis("Vertical");
+	void pitch() {
 
-		transform.Rotate(transform.right, pitchSpeed * verticalInput * Time.deltaTime);
+
+		transform.Rotate(Vector3.right * pitchSpeed * verticalInput * Time.deltaTime);
 	}
 
 	void roll()
