@@ -897,9 +897,9 @@ MonoBehaviour:
   qx: 0
   qy: 0
   qz: 0
-  rollSpeed: 0
-  pitchSpeed: 0
-  yawSpeed: 0
+  rollSpeed: 5
+  pitchSpeed: 5
+  yawSpeed: 5
 --- !u!1 &1774833804
 GameObject:
   m_ObjectHideFlags: 0
