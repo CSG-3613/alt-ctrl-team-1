@@ -12,7 +12,7 @@ public class MPU6050 : MonoBehaviour
 	public string[] strData = new string[4];
 	public string[] strData_recieved = new string[4];
 	public float qw, qx, qy, qz;
-	public float rollSpeed, pitchSpeed, yawSpeed;
+	public float rollSpeed = 5f, pitchSpeed = 5f, yawSpeed = 5f;
 
 	// Start is called before the first frame update
 	void Start()
