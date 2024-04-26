@@ -12,7 +12,9 @@ public class MPU6050 : MonoBehaviour
 	public string[] strData = new string[4];
 	public string[] strData_recieved = new string[4];
 	public float qw, qx, qy, qz;
-	public float rollSpeed = 5f, pitchSpeed = 5f, yawSpeed = 5f;
+	public float rollSpeed = 5f;
+	public float pitchSpeed = 5f;
+	public float yawSpeed = 5f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -38,7 +40,7 @@ public class MPU6050 : MonoBehaviour
 			qz = float.Parse(strData_recieved[3]);
 
 			// transform.rotation = new Quaternion(-qx, qz, -qy, qw);
-			transform.Rotate(-qx * rollSpeed, qz * pitchSpeed, -qy * yawSpeed);
+			transform.Rotate(-qx * rollSpeed, -qz * pitchSpeed, -qy * yawSpeed);
 		}
 	}
 }
