@@ -5329,6 +5329,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f8e51d31691fd346bc17f80691966c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1725814252}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f8e51d31691fd346bc17f80691966c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1725814255}
   m_SourcePrefab: {fileID: 100100000, guid: 0f8e51d31691fd346bc17f80691966c7, type: 3}
 --- !u!1001 &1432251075
 PrefabInstance:
@@ -6489,6 +6492,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.37
+--- !u!114 &1725814255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725814251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5f6a0d48171f24f8aece1bf2f1857b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0, z: 0}
+  period: 2
 --- !u!1 &1736548972
 GameObject:
   m_ObjectHideFlags: 0
