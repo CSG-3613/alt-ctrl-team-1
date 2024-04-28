@@ -2,8 +2,8 @@
  * Created by: Bridget Kurr
  * Date Created: June 17, 2022
  * 
- * Last Edited by:
- * Last Edited:
+ * Last Edited by: Bridget Kurr
+ * Last Edited: April 2024
  * 
  * Description: A level timer that can be set and controlled
  ****/

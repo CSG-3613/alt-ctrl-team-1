@@ -2,8 +2,8 @@
  * Created by: Bridget Kurr
  * Date Created: June 13, 2022
  * 
- * Last Edited by:
- * Last Edited:
+ * Last Edited by: Bridget Kurr
+ * Last Edited: April 2024
  * 
  * Description: Collectable object behaviors for counting the total amount of collectables and checking for collision with the player.
  ****/

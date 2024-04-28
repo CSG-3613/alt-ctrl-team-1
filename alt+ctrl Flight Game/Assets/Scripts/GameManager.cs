@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burrs
  * Date Created: July 03, 2022
  * 
- * Last Edited by: NA
- * Last Edited: July 03, 2022
+ * Last Edited by: Bridget Kurr
+ * Last Edited: April 2024
  * 
  * Description: Basic GameManager Template
 ****/

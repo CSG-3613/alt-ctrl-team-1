@@ -2,8 +2,8 @@
  * Created by: Bridget Kurr
  * Date Created: June 17, 2022
  * 
- * Last Edited by:
- * Last Edited:
+ * Last Edited by: Bridget Kurr
+ * Last Edited: April 2024
  * 
  * Description: A class to add constant rotation to objects
  ****/
@@ -16,13 +16,13 @@ public class Rotation : MonoBehaviour
 {
 
     /****VARIABLES****/
-    private float z; //
+    public float z = 0; //
 
 
     // Start is called before the first frame update
     void Start()
     {
-        z = 0.5f;  //velocity around the y axis
+        //z = 0.5f;  //velocity around the y axis
     }
 
 
