@@ -489,9 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0bde6606373cb43acc2576bd58979c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleTextbox: {fileID: 0}
-  creditsTextbox: {fileID: 0}
-  copyrightTextbox: {fileID: 0}
+  titleTextbox: {fileID: 1222099330}
+  creditsTextbox: {fileID: 1549844095}
+  copyrightTextbox: {fileID: 1290442356}
   messageTextbox: {fileID: 0}
   message2Textbox: {fileID: 0}
 --- !u!114 &1093576140
