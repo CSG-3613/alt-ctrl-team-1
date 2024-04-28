@@ -10201,7 +10201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddaca9550df6ce4bb49822707773c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winCollectAmount: 0
+  winCollectAmount: 2
   useCollectableCount: 0
   hasCollectedAll: 0
 --- !u!1660057539 &9223372036854775807
