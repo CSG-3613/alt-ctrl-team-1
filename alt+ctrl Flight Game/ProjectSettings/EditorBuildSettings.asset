@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu Scene.unity
+    guid: 8bd025323c1d0234182ee99b528c0976
+  - enabled: 1
+    path: Assets/Scenes/Kid's Room WIP.unity
+    guid: 9168675be64b9ec40b8c27e23a2d91c8
   m_configObjects: {}
