@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour
 
     [Header("GENERAL SETTINGS")]
     public string gameTitle = "Untitled Game";  //name of the game
-    public string gameCredits = "Made by Me"; //game creator(s)
-    public string copyrightDate = "Copyright " + thisDay; //date cretaed
+    public string gameCredits = "Bridget Kurr - Game Design, Level Design, Asset Management, Research, Programming\r\nAyden...\r\nMalia...\r\nHeather..."; //game creator(s)
+    public string copyrightDate = "Copyright  © " + thisDay; //date cretaed
 
     //reference to system time
     private static string thisDay = System.DateTime.Now.ToString("yyyy"); //today's date as string

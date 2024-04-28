@@ -163,12 +163,19 @@ MonoBehaviour:
   gameLevels:
   - Kid's Room WIP
   gameLevelsCount: 0
-  gameTitle: Winged Wonders
-  gameCredits: Made by Me
-  copyrightDate: "Copyright \xA9 2024"
+  gameTitle: WINGED WONDERS
+  gameCredits: 'Bridget Kurr - Game Design, Level Design, Asset Management, Research,
+    Programming
+
+    Ayden...
+
+    Malia...
+
+    Heather...'
+  copyrightDate: "Copyright  \xA9 2024"
   defaultEndMessage: Game Over
-  loseMessage: Better Luck Next Time!
-  winMessage: You collected all the rings!
+  loseMessage: You Lose
+  winMessage: You Win
   endMsg: 
   recordHighScore: 0
   defaultHighScore: 1000
