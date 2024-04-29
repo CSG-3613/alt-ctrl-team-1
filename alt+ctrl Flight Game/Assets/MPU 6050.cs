@@ -8,13 +8,13 @@ public class MPU6050 : MonoBehaviour
 	
 	SerialPort stream = new SerialPort("COM4", 115200);
 
-	public string strRecieved;
-	public string[] strData = new string[4];
-	public string[] strData_recieved = new string[4];
-	public float qw, qx, qy, qz;
-	public float rollSpeed = 2.5f;
-	public float pitchSpeed = 2.5f;
-	public float yawSpeed = 2.5f;
+	private string strRecieved;
+	private string[] strData = new string[4];
+	private string[] strData_recieved = new string[4];
+	private float qw, qx, qy, qz;
+	private float rollSpeed = 1f;
+	private float pitchSpeed = 1f;
+	private float yawSpeed = 1f;
 
 	// Start is called before the first frame update
 	void Start()

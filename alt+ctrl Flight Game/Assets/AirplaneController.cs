@@ -44,11 +44,11 @@ public class AirplaneController : MonoBehaviour
 
 		if (horizontalInput > 0)
 		{
-			rb.velocity += Vector3.right * turnSpeed;
+			rb.velocity += Vector3.right / turnSpeed;
 		}
 		else
 		{
-			rb.velocity -= Vector3.right * turnSpeed;
+			rb.velocity -= Vector3.right / turnSpeed;
 		}
 	}
 
