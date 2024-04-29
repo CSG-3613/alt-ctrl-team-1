@@ -12,9 +12,9 @@ public class MPU6050 : MonoBehaviour
 	public string[] strData = new string[4];
 	public string[] strData_recieved = new string[4];
 	public float qw, qx, qy, qz;
-	public float rollSpeed = 5f;
-	public float pitchSpeed = 5f;
-	public float yawSpeed = 5f;
+	public float rollSpeed = 2.5f;
+	public float pitchSpeed = 2.5f;
+	public float yawSpeed = 2.5f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -23,7 +23,7 @@ public class MPU6050 : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void LateUpdate()
 	{
 		strRecieved = stream.ReadLine(); // Read the information.
 
