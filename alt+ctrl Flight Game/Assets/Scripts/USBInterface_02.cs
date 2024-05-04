@@ -5,8 +5,9 @@ using System.IO.Ports;
 
 public class USBInterface_02S: MonoBehaviour
 {
-    SerialPort port = new SerialPort("COM5", 38400);
-    public int buttonDown = 0;
+    private SerialPort port = new SerialPort("COM5", 38400);
+    private string buttonString;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,10 @@ public class USBInterface_02S: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        buttonDown = port.ReadByte();
+        buttonString = port.ReadLine();
+        if (buttonString == "buttonDown")
+        {
+            //increase speed here
+        }
     }
 }
