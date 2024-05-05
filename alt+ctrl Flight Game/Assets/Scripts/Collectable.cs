@@ -15,7 +15,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     /****VARIABLES****/
-
+    public Collection col;
     static public int collectableCount; //counts the number of collectables in the scene
 
     // Awake is called on instantiation before Start
@@ -23,9 +23,16 @@ public class Collectable : MonoBehaviour
     {
         collectableCount++; //add to collectable
         Debug.Log("<color=lightblue>Number of Collectables </color>" + collectableCount);
-
+        col.setSceneCollectables(collectableCount);
+        
     }//end Awake()
 
+
+    private void Start()
+    {
+        col.setSceneCollectables(collectableCount);
+        Debug.Log(collectableCount);
+    }
     //Called when a GameObject collides with another GameObject
     private void OnTriggerEnter(Collider other)
     {

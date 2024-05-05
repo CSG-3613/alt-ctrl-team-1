@@ -31,9 +31,12 @@ public class Collection : MonoBehaviour
 
     private Timer timer; //reference to level timer
 
+    private int sceneCount;
+
     private void Awake()
     {
         gm = GameManager.GM;
+        Debug.Log(sceneCount);
     }//end Awake()
 
     // Start is called before the first frame update
@@ -45,7 +48,7 @@ public class Collection : MonoBehaviour
         if (useCollectableCount)
         {
             //set the win amount to the amount of collectables in the scene
-            winCollectAmount = 28; //Collectable.collectableCount;
+            winCollectAmount = sceneCount; //Collectable.collectableCount;
         }//end if(useCollectableCount)
 
         Debug.Log("Win collect amount: " + winCollectAmount);
@@ -80,5 +83,10 @@ public class Collection : MonoBehaviour
         collectablesInCollection++; //add to amount in collection
         Debug.Log("<color=blue>Collectable Added</color>");
     }//end AddToCollection()
+
+    public void setSceneCollectables(int count)
+    {
+        sceneCount = count;
+    }
 
 }//end Collection
