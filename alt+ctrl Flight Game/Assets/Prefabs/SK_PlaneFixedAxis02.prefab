@@ -221,7 +221,7 @@ MonoBehaviour:
   speed: 1
   normalSpeed: 1
   boostSpeed: 3
-  yawMultiplier: 5
-  pitchMultiplier: 5
-  rollMultiplier: 5
+  yawMultiplier: 1
+  pitchMultiplier: 1
+  rollMultiplier: 1
   rb: {fileID: 1866811872412754058}
