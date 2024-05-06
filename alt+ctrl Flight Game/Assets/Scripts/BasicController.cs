@@ -100,12 +100,12 @@ public class BasicController : MonoBehaviour
 
         if (yawInput > 0)
         {
-            rb.velocity += Vector3.right * yawMultiplier;
+            rb.velocity += Vector3.right / yawMultiplier;
             transform.Rotate(0, 0, yawInput * yawMultiplier * Time.deltaTime);
         }
         else
         {
-           rb.velocity -= Vector3.right * yawMultiplier;
+           rb.velocity -= Vector3.right / yawMultiplier;
            transform.Rotate(0, 0, -yawInput * yawMultiplier * Time.deltaTime);
         }
     }
