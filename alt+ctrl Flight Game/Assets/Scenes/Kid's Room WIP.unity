@@ -1506,7 +1506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: m_Constraints
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: m_ImplicitTensor
@@ -8075,7 +8075,7 @@ ParentConstraint:
   m_AffectTranslationZ: 1
   m_AffectRotationX: 1
   m_AffectRotationY: 1
-  m_AffectRotationZ: 1
+  m_AffectRotationZ: 0
   m_Active: 1
   m_IsLocked: 1
   m_Sources:

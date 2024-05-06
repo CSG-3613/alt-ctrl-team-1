@@ -79,7 +79,7 @@ public class BasicController : MonoBehaviour
             //Debug.Log(pitchInput.ToString());
             pitch();
 
-            rollInput = acell[1] + buffer;
+            //rollInput = acell[1] + buffer;
             //roll();
 
             if (pitchInput > -buffer &&  pitchInput < buffer) pitchInput = 0;   //removes unintentional rotation
@@ -101,12 +101,12 @@ public class BasicController : MonoBehaviour
         if (yawInput > 0)
         {
             rb.velocity += Vector3.right / yawMultiplier;
-            transform.Rotate(0, 0, yawInput * yawMultiplier * Time.deltaTime);
+            //transform.Rotate(0, 0, -yawInput * yawMultiplier * Time.deltaTime);
         }
         else
         {
-           rb.velocity -= Vector3.right / yawMultiplier;
-           transform.Rotate(0, 0, -yawInput * yawMultiplier * Time.deltaTime);
+           rb.velocity += Vector3.left / yawMultiplier;
+           //transform.Rotate(0, 0, yawInput * yawMultiplier * Time.deltaTime);
         }
     }
 
