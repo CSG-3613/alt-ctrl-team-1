@@ -69,12 +69,12 @@ public class BasicController : MonoBehaviour
             float[] acell = gyro.Accel.GetCalibratedAccelData();
             yawInput = -acell[1] + 0.3f;
             //Debug.Log(yawInput.ToString());
-            //bank();
+            bank();
             pitchInput = acell[0] - 0.3f;
             //Debug.Log(pitchInput.ToString());
             pitch();
-            rollInput = acell[1] + 0.3f;
-            //roll();
+            rollInput = (acell[1] + 0.3f) / 2;
+            roll();
 
             if(pitchInput > -0.3f &&  pitchInput < 0.3f) pitchInput = 0; //removes unintentional rotation
             if (yawInput > -0.3f && yawInput < 0.3f) yawInput = 0; //removes unintentional rotation
@@ -113,7 +113,7 @@ public class BasicController : MonoBehaviour
 
     void roll() //incorporated from Ayden's script
     {
-        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);
+        //transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);
         /*
         if (rollInput > 0)
         {
@@ -126,7 +126,7 @@ public class BasicController : MonoBehaviour
 
         //rollInput = Input.GetAxis("Roll");
 
-        //transform.Rotate(0, 0, -rollMultiplier * rollInput * Time.deltaTime);
+        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);//removed negative
     }
 
     public float SerialDataReading() // reads the input from the boost button and returns a float for the speed setting based on buttonDown or buttonUp
