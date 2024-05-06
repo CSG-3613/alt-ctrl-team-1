@@ -8,6 +8,7 @@ using WiimoteApi;
 public class BasicController : MonoBehaviour
 {
     Wiimote gyro;
+    private bool recalibrateGyro = false;
 
     public float speed = 1.0f; //used to keep the state of the speed (normalSpeed or normalSpeed + boostSpeed)
     public float normalSpeed = 1.0f; //the base speed the plane moves
@@ -25,6 +26,8 @@ public class BasicController : MonoBehaviour
 
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
+    private string buttonString2;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -57,36 +60,39 @@ public class BasicController : MonoBehaviour
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
         
         speed = SerialDataReading(); ///calls to readLine() input from arduino
+
         rb.velocity = transform.forward * speed; //uses updated speed from SerialDatatReading() for rigid body velocity
 
         if (gyro != null)
         {
             Debug.Log("gyro is not null!");
             float[] acell = gyro.Accel.GetCalibratedAccelData();
-            yawInput = acell[1];
+            yawInput = -acell[1] + 0.3f;
             //Debug.Log(yawInput.ToString());
-            bank();
-            pitchInput = -acell[0];
+            //bank();
+            pitchInput = acell[0] - 0.3f;
             //Debug.Log(pitchInput.ToString());
             pitch();
-            //rollInput = acell[0];
+            rollInput = acell[1] + 0.3f;
             //roll();
 
-            //var targetAngle = Mathf.Atan2(yawInput, pitchInput) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Euler(0, targetAngle, 0);
+            if(pitchInput > -0.3f &&  pitchInput < 0.3f) pitchInput = 0; //removes unintentional rotation
+            if (yawInput > -0.3f && yawInput < 0.3f) yawInput = 0; //removes unintentional rotation
         }
         
     }
 
-    // FixedUpdate has 50 calls per second
     IEnumerator activateWiimote()
     {
-        yield return new WaitUntil(() => WiimoteManager.HasWiimote());
+        yield return new WaitUntil(() => WiimoteManager.HasWiimote()); //delays everything until the wiimotes are found
     }
 
     void bank() //incorporated from Ayden's script
     {
-        transform.Rotate(Vector3.back * yawInput * Time.deltaTime * yawMultiplier);
+        transform.Rotate(0, yawInput * yawMultiplier * Time.deltaTime, 0);
+        //transform.Rotate(Vector3.up * yawInput * Time.deltaTime * yawMultiplier); //changed from back to up to rotate around the y axis for better turning control
+
+        //transform.Rotate(Vector3.back * yawInput * Time.deltaTime * yawMultiplier);
 
         if (yawInput > 0)
         {
@@ -107,15 +113,27 @@ public class BasicController : MonoBehaviour
 
     void roll() //incorporated from Ayden's script
     {
-        rollInput = Input.GetAxis("Roll");
+        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);
+        /*
+        if (rollInput > 0)
+        {
+            rb.velocity += Vector3.back / rollMultiplier;
+        }
+        else
+        {
+            rb.velocity -= Vector3.back / rollMultiplier;
+        }*/
 
-        transform.Rotate(0, 0, -rollMultiplier * rollInput * Time.deltaTime);
+        //rollInput = Input.GetAxis("Roll");
+
+        //transform.Rotate(0, 0, -rollMultiplier * rollInput * Time.deltaTime);
     }
 
-    public float SerialDataReading() // reads the input from the button and returns a float for the speed setting based on buttonDown or buttonUp
+    public float SerialDataReading() // reads the input from the boost button and returns a float for the speed setting based on buttonDown or buttonUp
     {
         Debug.Log("entered SerialDataReading()");
         buttonString = port.ReadLine();
+       
         if (buttonString == "buttonDown")
         {
         Debug.Log("entered button if");
@@ -126,5 +144,7 @@ public class BasicController : MonoBehaviour
         Debug.Log("entered button else");
             return speed = normalSpeed;
         }
+        
     }
+
 }
