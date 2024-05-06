@@ -49,13 +49,13 @@ public class BasicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( gyro.Button.home)
+        if ( gyro.Button.a)
         {
             gyro.Accel.CalibrateAccel(AccelCalibrationStep.LEFT_SIDE_UP);
         }
-        yawInput = Input.GetAxis("Vertical");
-        pitchInput = Input.GetAxis("Horizontal");
-
+        //yawInput = Input.GetAxis("Vertical"); //not needed with wiimote
+        //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
+        
         speed = SerialDataReading(); ///calls to readLine() input from arduino
         rb.velocity = transform.forward * speed; //uses updated speed from SerialDatatReading() for rigid body velocity
 
@@ -66,11 +66,14 @@ public class BasicController : MonoBehaviour
             yawInput = acell[1];
             //Debug.Log(yawInput.ToString());
             bank();
-            pitchInput = acell[0];
+            pitchInput = -acell[0];
             //Debug.Log(pitchInput.ToString());
-            //pitch();
+            pitch();
             //rollInput = acell[0];
             //roll();
+
+            //var targetAngle = Mathf.Atan2(yawInput, pitchInput) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.Euler(0, targetAngle, 0);
         }
         
     }
