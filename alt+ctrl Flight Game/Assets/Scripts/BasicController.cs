@@ -8,8 +8,7 @@ using WiimoteApi;
 public class BasicController : MonoBehaviour
 {
     Wiimote gyro;
-    private bool recalibrateGyro = false;
-
+    
     public float speed = 1.0f;                                                 //used to keep the state of the speed (normalSpeed or normalSpeed + boostSpeed)
     public float normalSpeed = 1.0f;                                           //the base speed the plane moves
     public float boostSpeed = 3.0f;                                            //the added speed the plane moves when on buttonDown
@@ -28,7 +27,6 @@ public class BasicController : MonoBehaviour
 
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
-    private string buttonString2;
     
 
     // Start is called before the first frame update
@@ -85,7 +83,6 @@ public class BasicController : MonoBehaviour
             if (pitchInput > -buffer &&  pitchInput < buffer) pitchInput = 0;   //removes unintentional rotation
             if (yawInput > -buffer && yawInput < buffer) yawInput = 0;          //removes unintentional rotation
         }
-        
     }
 
     IEnumerator activateWiimote()
@@ -97,7 +94,7 @@ public class BasicController : MonoBehaviour
     {
         transform.Rotate(0, yawInput * yawMultiplier * Time.deltaTime, 0);
         //transform.Rotate(Vector3.up * yawInput * Time.deltaTime * yawMultiplier); //changed from back to up to rotate around the y axis for better turning control
-
+        
         if (yawInput > 0)
         {
             rb.velocity += Vector3.right / yawMultiplier;
