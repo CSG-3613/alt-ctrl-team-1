@@ -55,6 +55,7 @@ public class BasicController : MonoBehaviour
         if ( gyro.Button.a)
         {
             gyro.Accel.CalibrateAccel(AccelCalibrationStep.LEFT_SIDE_UP);
+            Debug.Log("reset calibration");
         }
         //yawInput = Input.GetAxis("Vertical"); //not needed with wiimote
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
@@ -73,8 +74,8 @@ public class BasicController : MonoBehaviour
             pitchInput = acell[0] - 0.3f;
             //Debug.Log(pitchInput.ToString());
             pitch();
-            rollInput = (acell[1] + 0.3f) / 2;
-            roll();
+            rollInput = (acell[1] + 0.3f);
+            //roll();
 
             if(pitchInput > -0.3f &&  pitchInput < 0.3f) pitchInput = 0; //removes unintentional rotation
             if (yawInput > -0.3f && yawInput < 0.3f) yawInput = 0; //removes unintentional rotation

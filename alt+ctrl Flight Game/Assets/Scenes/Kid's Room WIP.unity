@@ -1504,13 +1504,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
+      propertyPath: m_Constraints
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866811872412754058, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590693084970396834, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: boostSpeed
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2590693084970396834, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: normalSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2590693084970396834, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: yawMultiplier
