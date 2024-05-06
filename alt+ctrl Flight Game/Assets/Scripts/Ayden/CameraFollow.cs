@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
         cam_rotation.z = 0;
         Debug.Log("camera rotation values: " + cam_rotation);
 
-        transform.LookAt(targetT);
+        //transform.LookAt(targetT);
         transform.position = cam_position;
         transform.rotation = cam_rotation;
         
