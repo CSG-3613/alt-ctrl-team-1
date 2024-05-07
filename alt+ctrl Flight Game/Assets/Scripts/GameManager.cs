@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
 
 
     [Header("GENERAL SETTINGS")]
-    public string gameTitle = "Untitled Game";  //name of the game
-    public string gameCredits = "Bridget Kurr - Game Design, Level Design, Asset Management, Research, Programming\r\nAyden...\r\nMalia...\r\nHeather..."; //game creator(s)
+    public string gameTitle = "WINGED WONDERS";  //name of the game
+    public string gameCredits = "Bridget Kurr - Game Designer, Level Designer, Asset Manager, Researcher, Programmer\r\nAyden...\r\nMalia...\r\nHeather..."; //game creator(s)
     public string copyrightDate = "Copyright  © " + thisDay; //date cretaed
 
     //reference to system time
@@ -81,8 +81,8 @@ public class GameManager : MonoBehaviour
 
     [Header("GAME MESSAGES")]
     public string defaultEndMessage = "Game Over";//the end screen message, depends on winning outcome
-    public string loseMessage = "You Lose"; //Message if player loses
-    public string winMessage = "You Win"; //Message if player wins
+    public string loseMessage = "Try again!"; //Message if player loses
+    public string winMessage = "You collected all the rings!"; //Message if player wins
     [HideInInspector] public string endMsg;//the end screen message, depends on winning outcome
 
 
@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
         //get first game level
         gameLevelsCount = 1; //set the count for the game levels
         loadLevel = gameLevelsCount - 1; //the level from the array
-
+        SetGameDefaults();                                              //added for restart counter
         //load first game level
         SceneManager.LoadScene(gameLevels[loadLevel]);
     }//end StartGame()
