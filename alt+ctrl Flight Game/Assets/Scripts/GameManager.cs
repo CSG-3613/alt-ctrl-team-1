@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
         //get first game level
         gameLevelsCount = 1; //set the count for the game levels
         loadLevel = gameLevelsCount - 1; //the level from the array
-        SetGameDefaults();                                              //added for restart counter
+       
         //load first game level
         SceneManager.LoadScene(gameLevels[loadLevel]);
     }//end StartGame()
