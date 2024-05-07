@@ -28,6 +28,7 @@ public class BasicController : MonoBehaviour
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
     
+    
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,6 @@ public class BasicController : MonoBehaviour
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
         
         speed = SerialDataReading();                                            //calls to readLine() input from arduino
-
         rb.velocity = transform.forward * speed;                                //uses updated speed from SerialDataReading() for rigid body velocity
 
         if (gyro != null)
@@ -83,6 +83,10 @@ public class BasicController : MonoBehaviour
             if (pitchInput > -buffer &&  pitchInput < buffer) pitchInput = 0;   //removes unintentional rotation
             if (yawInput > -buffer && yawInput < buffer) yawInput = 0;          //removes unintentional rotation
         }
+        /*Quaternion planeRotation = transform.rotation;
+        Quaternion adjustedRotation = planeRotation;
+        adjustedRotation.z = -planeRotation.z;
+        transform.rotation = adjustedRotation;*/
     }
 
     IEnumerator activateWiimote()
@@ -126,7 +130,7 @@ public class BasicController : MonoBehaviour
 
         //rollInput = Input.GetAxis("Roll");
 
-        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);//removed negative
+        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);//removed negative from multiplier
     }
 
     public float SerialDataReading() // reads the input from the boost button and returns a float for the speed setting based on buttonDown or buttonUp
@@ -135,12 +139,12 @@ public class BasicController : MonoBehaviour
         buttonString = port.ReadLine();
        
         if (buttonString == "buttonDown") {
-        Debug.Log("entered button if");
+        //Debug.Log("entered button if");
             return speed = normalSpeed + boostSpeed;
         }
         else
         {
-        Debug.Log("entered button else");
+        //Debug.Log("entered button else");
             return speed = normalSpeed;
         }
         

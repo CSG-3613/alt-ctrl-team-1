@@ -17,19 +17,18 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Entered Camera Update Method");
+        //Debug.Log("Entered Camera Update Method");
         Vector3 target_position = target.transform.position ;
-        Debug.Log("target's position: " + target_position);
+        //Debug.Log("target's position: " + target_position);
         Vector3 cam_position = target_position + offset;
-        Debug.Log("camera position values: " + cam_position);
+        //Debug.Log("camera position values: " + cam_position);
 
         Quaternion target_rotation = target.transform.rotation;
-        Debug.Log("target's rotation: " + target_rotation);
+        //Debug.Log("target's rotation: " + target_rotation);
         Quaternion cam_rotation = target_rotation;
         cam_rotation.z = 0;
-        Debug.Log("camera rotation values: " + cam_rotation);
+        //Debug.Log("camera rotation values: " + cam_rotation);
 
-        //transform.LookAt(targetT);
         transform.position = cam_position;
         transform.rotation = cam_rotation;
         
@@ -47,6 +46,11 @@ public class CameraFollow : MonoBehaviour
             transform.position = cam_position;
             transform.rotation = cam_rotation;
         }*/
+    }
+
+    private void FixedUpdate()
+    {
+        transform.LookAt(targetT);
     }
 }
 
