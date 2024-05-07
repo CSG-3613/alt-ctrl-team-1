@@ -1645,7 +1645,7 @@ PrefabInstance:
     - target: {fileID: 2590693084970396834, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: boostClip
       value: 
-      objectReference: {fileID: 8300000, guid: 55dc9404d779e8a4e85868737386c5a1, type: 3}
+      objectReference: {fileID: 8300000, guid: e3b2a8e318266094584fee82ea200ab0, type: 3}
     - target: {fileID: 2590693084970396834, guid: 3a54f301dd9d1bb4dbc8ac2dbc5b742a, type: 3}
       propertyPath: boostSpeed
       value: 8
@@ -5466,7 +5466,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 467dec8427b8b094fbe1c37b08f36119, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 55dc9404d779e8a4e85868737386c5a1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3b2a8e318266094584fee82ea200ab0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5474,7 +5474,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 75
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

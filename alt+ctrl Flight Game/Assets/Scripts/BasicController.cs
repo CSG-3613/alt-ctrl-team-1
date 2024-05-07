@@ -28,7 +28,6 @@ public class BasicController : MonoBehaviour
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
 
-    private bool boostSound = false;
     public AudioClip boostClip;
     public AudioSource boostSource;
 
@@ -64,12 +63,12 @@ public class BasicController : MonoBehaviour
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
         
         speed = SerialDataReading();                                            //calls to readLine() input from arduino
-        Debug.Log(speed);
+        ///Debug.Log(speed);
         rb.velocity = transform.forward * speed;                                //uses updated speed from SerialDataReading() for rigid body velocity
         if (speed == normalSpeed + boostSpeed)
         {
             Debug.Log("boost sound is playing");
-            boostSource.Play();
+            AudioSource.PlayClipAtPoint(boostClip, transform.position);
         }
         else
         {
