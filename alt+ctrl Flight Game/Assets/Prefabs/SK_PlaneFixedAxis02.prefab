@@ -219,9 +219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  normalSpeed: 1
-  boostSpeed: 3
-  yawMultiplier: 1
-  pitchMultiplier: 1
-  rollMultiplier: 1
-  rb: {fileID: 1866811872412754058}
+  normalSpeed: 4
+  boostSpeed: 8
+  yawMultiplier: 60
+  pitchMultiplier: 40
+  rollMultiplier: 40
+  buffer: 0.5
+  rb: {fileID: 0}
+  boostClip: {fileID: 8300000, guid: e3b2a8e318266094584fee82ea200ab0, type: 3}
+  boostSource: {fileID: 0}
