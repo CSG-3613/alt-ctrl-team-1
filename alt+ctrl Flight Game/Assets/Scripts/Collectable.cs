@@ -10,6 +10,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Media;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
@@ -17,6 +18,8 @@ public class Collectable : MonoBehaviour
     /****VARIABLES****/
     public Collection col;
     static public int collectableCount; //counts the number of collectables in the scene
+
+    public AudioClip pickupSound;
 
     // Awake is called on instantiation before Start
     private void Awake()
@@ -41,6 +44,7 @@ public class Collectable : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<Collection>().AddToCollection();//call method on the Collection component of other object
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position); 
             Destroy(gameObject); //destroy this gameObject (collectable object)
         }
 

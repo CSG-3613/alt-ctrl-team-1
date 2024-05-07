@@ -164,8 +164,8 @@ MonoBehaviour:
   - Kid's Room WIP
   gameLevelsCount: 0
   gameTitle: WINGED WONDERS
-  gameCredits: 'Bridget Kurr - Game Design, Level Design, Asset Management, Research,
-    Programming
+  gameCredits: 'Bridget Kurr - Game Designer, Level Designer, Asset Manager, Researcher,
+    Programmer
 
     Ayden...
 
@@ -174,8 +174,8 @@ MonoBehaviour:
     Heather...'
   copyrightDate: "Copyright  \xA9 2024"
   defaultEndMessage: Game Over
-  loseMessage: You Lose
-  winMessage: You Win
+  loseMessage: Try again!
+  winMessage: You collected all the rings!
   endMsg: 
   recordHighScore: 0
   defaultHighScore: 1000

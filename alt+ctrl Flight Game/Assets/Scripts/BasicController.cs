@@ -8,8 +8,7 @@ using WiimoteApi;
 public class BasicController : MonoBehaviour
 {
     Wiimote gyro;
-    private bool recalibrateGyro = false;
-
+    
     public float speed = 1.0f;                                                 //used to keep the state of the speed (normalSpeed or normalSpeed + boostSpeed)
     public float normalSpeed = 1.0f;                                           //the base speed the plane moves
     public float boostSpeed = 3.0f;                                            //the added speed the plane moves when on buttonDown
@@ -28,8 +27,9 @@ public class BasicController : MonoBehaviour
 
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
-    private string buttonString2;
-    
+
+    public AudioClip boostClip;
+    public AudioSource boostSource;
 
     // Start is called before the first frame update
     void Start()
@@ -63,8 +63,18 @@ public class BasicController : MonoBehaviour
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
         
         speed = SerialDataReading();                                            //calls to readLine() input from arduino
-
+        ///Debug.Log(speed);
         rb.velocity = transform.forward * speed;                                //uses updated speed from SerialDataReading() for rigid body velocity
+        if (speed == normalSpeed + boostSpeed)
+        {
+            Debug.Log("boost sound is playing");
+            AudioSource.PlayClipAtPoint(boostClip, transform.position);
+        }
+        else
+        {
+            Debug.Log("boost sound is stopped");
+            boostSource.Stop();
+        }
 
         if (gyro != null)
         {
@@ -86,6 +96,10 @@ public class BasicController : MonoBehaviour
             if (yawInput > -buffer && yawInput < buffer) yawInput = 0;          //removes unintentional rotation
         }
         
+        /*Quaternion planeRotation = transform.rotation;
+        Quaternion adjustedRotation = planeRotation;
+        adjustedRotation.z = -planeRotation.z;
+        transform.rotation = adjustedRotation;*/
     }
 
     IEnumerator activateWiimote()
@@ -97,7 +111,7 @@ public class BasicController : MonoBehaviour
     {
         transform.Rotate(0, yawInput * yawMultiplier * Time.deltaTime, 0);
         //transform.Rotate(Vector3.up * yawInput * Time.deltaTime * yawMultiplier); //changed from back to up to rotate around the y axis for better turning control
-
+        
         if (yawInput > 0)
         {
             rb.velocity += Vector3.right / yawMultiplier;
@@ -129,7 +143,7 @@ public class BasicController : MonoBehaviour
 
         //rollInput = Input.GetAxis("Roll");
 
-        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);//removed negative
+        transform.Rotate(0, 0, rollMultiplier * rollInput * Time.deltaTime);//removed negative from multiplier
     }
 
     public float SerialDataReading() // reads the input from the boost button and returns a float for the speed setting based on buttonDown or buttonUp
@@ -138,12 +152,12 @@ public class BasicController : MonoBehaviour
         buttonString = port.ReadLine();
        
         if (buttonString == "buttonDown") {
-        Debug.Log("entered button if");
+            //Debug.Log("entered button if");
             return speed = normalSpeed + boostSpeed;
         }
         else
         {
-        Debug.Log("entered button else");
+            //Debug.Log("entered button else");
             return speed = normalSpeed;
         }
         
