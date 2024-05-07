@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GENERAL SETTINGS")]
     public string gameTitle = "WINGED WONDERS";  //name of the game
-    public string gameCredits = "Bridget Kurr - Game Designer, Level Designer, Asset Manager, Researcher, Programmer\r\nAyden...\r\nMalia...\r\nHeather..."; //game creator(s)
+    public string gameCredits = "Credits"; //game creator(s)
     public string copyrightDate = "Copyright  © " + thisDay; //date cretaed
 
     //reference to system time
