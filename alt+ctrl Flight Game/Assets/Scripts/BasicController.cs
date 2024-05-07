@@ -27,8 +27,10 @@ public class BasicController : MonoBehaviour
 
     private SerialPort port = new SerialPort("COM5", 9600);
     private string buttonString;
-    
-    
+
+    private bool boostSound = false;
+    public AudioClip boostClip;
+    public AudioSource boostSource;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +64,18 @@ public class BasicController : MonoBehaviour
         //pitchInput = Input.GetAxis("Horizontal"); // not needed with wiimote
         
         speed = SerialDataReading();                                            //calls to readLine() input from arduino
+        Debug.Log(speed);
         rb.velocity = transform.forward * speed;                                //uses updated speed from SerialDataReading() for rigid body velocity
+        if (speed == normalSpeed + boostSpeed)
+        {
+            Debug.Log("boost sound is playing");
+            boostSource.Play();
+        }
+        else
+        {
+            Debug.Log("boost sound is stopped");
+            boostSource.Stop();
+        }
 
         if (gyro != null)
         {
@@ -83,6 +96,7 @@ public class BasicController : MonoBehaviour
             if (pitchInput > -buffer &&  pitchInput < buffer) pitchInput = 0;   //removes unintentional rotation
             if (yawInput > -buffer && yawInput < buffer) yawInput = 0;          //removes unintentional rotation
         }
+        
         /*Quaternion planeRotation = transform.rotation;
         Quaternion adjustedRotation = planeRotation;
         adjustedRotation.z = -planeRotation.z;
@@ -139,12 +153,12 @@ public class BasicController : MonoBehaviour
         buttonString = port.ReadLine();
        
         if (buttonString == "buttonDown") {
-        //Debug.Log("entered button if");
+            //Debug.Log("entered button if");
             return speed = normalSpeed + boostSpeed;
         }
         else
         {
-        //Debug.Log("entered button else");
+            //Debug.Log("entered button else");
             return speed = normalSpeed;
         }
         
